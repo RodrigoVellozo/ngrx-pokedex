@@ -1,0 +1,17 @@
+.pokemon-list {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  
+    gap: 50px;
+  }
+  
+  .search {
+    display: flex;
+    // align-items: center;
+    gap: 6px;
+    padding-top: 10px;
+    justify-content: center;
+  }
+  

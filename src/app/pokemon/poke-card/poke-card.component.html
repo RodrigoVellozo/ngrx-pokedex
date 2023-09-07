@@ -1,0 +1,25 @@
+<section class="pokemon-card">
+    <section class="pokemon-card__poke-img">
+      <button>
+        <img [src]="getPokemonImageById()" alt="pokemon_image" />
+      </button>
+      
+    </section>
+  
+    <section class="pokemon-card__poke-info">
+      <p class="id">
+        <span>Nº&nbsp;{{ leadingZero(pokeId) }}</span>
+      </p>
+  
+      <h2>{{ pokemon.name }}</h2>
+    </section>
+    
+    <section class="pokemon-card__poke-type">
+      <ng-container *ngFor="let type of types">
+        <p [class]="type">
+          <span>{{ type }}</span>
+        </p>
+      </ng-container>
+    </section>
+  </section>
+  
