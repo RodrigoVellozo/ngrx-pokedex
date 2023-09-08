@@ -1,47 +1,91 @@
 .pokemon-card {
-    background: #eee;
-    padding: 16px;
-    border: 1px solid #c5c5c5;
-    border-radius: 10px;
-    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
-    border-color: rgba(223, 225, 229, 0);
-  
-    &__poke-img {
-      background: #e0e0e0;
-    }
-  
-    &__poke-type {
-      display: flex;
-      gap: 6px;
-      p {
-        padding: 4px;
-        border-radius: 12%;
-      }
-      p.poison {
-        background-color: #b97fc9;
-      }
-      p.grass {
-        background-color: #9bcc50;
-      }
-      p.fire {
-        background-color: #fd7d24;
-      }
-      p.water {
-        background-color: #4592c4;
-      }
-      p.bug {
-        background-color: #729f3f;
-      }
-      p.flying {
-        background-color: pink//linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
-      }
-    }
+  background: #eee;
+  padding: 16px;
+  border: 1px solid #c5c5c5;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  border-color: rgba(223, 225, 229, 0);
+
+  &__poke-img {
+    background: #e0e0e0;
+  }
+
+  &__poke-type {
+    display: flex;
+    gap: 6px;
     h3 {
       margin: unset;
     }
-    button{
+    button {
       background: none;
       border: none;
     }
+    p {
+      padding: 4px;
+      border-radius: 12%;
+      font-weight: 700;
+      color: #f8f4f4;
+    }
+    p.poison {
+      background-color: #b97fc9;
+    }
+    p.grass {
+      background-color: #9bcc50;
+    }
+    p.fire {
+      background-color: #fd7d24;
+    }
+    p.water {
+      background-color: #4592c4;
+    }
+    p.bug {
+      background-color: #7fad4b;
+    }
+    p.flying {
+      background-color: #00d9ff
+    }
+    p.normal {
+      background-color: #a52a2a
+    }
+    p.fighting {
+      background-color: #daa520
+    }
+    p.ground {
+      background-color: #cc7722
+    }
+    p.rock {
+      background-color: #808080
+    }
+    p.ghost {
+      background-color: #c8a2c8
+    }
+    p.steel {
+      background-color: #c0c0c0
+    }
+    p.electric {
+      background-color: #ebdc08
+    }
+    p.psychic {
+      background-color: #006400
+    }
+    p.ice {
+      background-color: #f5f5f5
+    }
+    p.dragon {
+      background-color: #ffa500
+    }
+    p.dark {
+      background-color: #222222
+    }
+    p.fairy {
+      background-color: #ffc0cb
+    }
+    p.unknown {
+      background-color: none
+    }
+    p.shadow {
+      background-color: none
+    }
   }
-  
+
+}

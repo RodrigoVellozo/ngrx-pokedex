@@ -15,9 +15,9 @@
     </section>
     
     <section class="pokemon-card__poke-type">
-      <ng-container *ngFor="let type of types">
-        <p [class]="type">
-          <span>{{ type }}</span>
+      <ng-container *ngFor="let type of types | keyvalue; index as i">
+        <p [class]="type.value">
+          <span>{{ type.value }}</span>
         </p>
       </ng-container>
     </section>

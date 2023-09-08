@@ -7,9 +7,11 @@ export const pokemonFeatureKey = 'pokemonReducer';
 export interface PokemonState {
   isLoading: boolean;
 
-  pokemonsResponse?: any;
-
   pokeResponse?: any;
+
+  pokemonsResponse?: any[];
+
+  pokemonsTypesResponse?: any[];
 
   error?: HttpErrorResponse;
 }
@@ -20,6 +22,21 @@ export const initialState: PokemonState = {
 
 const _pokemonReducer = createReducer(
   initialState,
+  on(action.loadPokemon, (state) => ({
+    ...state,
+    isLoading: true,
+  })),
+  on(action.loadPokemonSuccess, (state, { pokeResponse }) => ({
+    ...state,
+    isLoading: false,
+    pokeResponse,
+  })),
+  on(action.loadPokemonError, (state, { error }) => ({
+    ...state,
+    isLoading: false,
+    error,
+  })),
+
   on(action.loadPokemons, (state) => ({
     ...state,
     isLoading: true,
@@ -35,21 +52,20 @@ const _pokemonReducer = createReducer(
     error,
   })),
 
-
-  on(action.loadPokemon, (state) => ({
+  on(action.loadPokemonsTypes, (state) => ({
     ...state,
     isLoading: true,
   })),
-  on(action.loadPokemonSuccess, (state, { pokeResponse }) => ({
+  on(action.loadPokemonsTypesSuccess, (state, { pokemonsTypesResponse }) => ({
     ...state,
     isLoading: false,
-    pokeResponse,
+    pokemonsTypesResponse,
   })),
-  on(action.loadPokemonError, (state, { error }) => ({
+  on(action.loadPokemonsTypesError, (state, { error }) => ({
     ...state,
     isLoading: false,
     error,
-  })),
+  }))
 );
 
 export function pokemonReducer(state = initialState, action: Action) {

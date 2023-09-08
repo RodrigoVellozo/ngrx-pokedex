@@ -14,10 +14,9 @@ export const selectedPokemon = createSelector(
   (state) => state.pokeResponse
 );
 
-export const selectedTypes = createSelector(
-  selectPokemonState,
-  (state) => state.pokeResponse?.types
-);
+export const selectedTypes = createSelector(selectPokemonState, (state) => {
+  return state.pokemonsTypesResponse;
+});
 
 export const selectedStats = createSelector(
   selectPokemonState,

@@ -1,6 +1,9 @@
 <div class="pokemon-list">
     <div *ngFor="let pokemon of (pokemons$ | async)!; index as i">
-      <app-poke-card [pokemon]="pokemon" [pokeId]="i + 1"></app-poke-card>
+      <app-poke-card [pokemon]="pokemon" [types]="types[i+1]" [pokeId]="i + 1"></app-poke-card>
     </div>
-  </div>
-  
+</div>
+<p hidden>
+  :)
+  {{workaround$|async}}
+</p>
