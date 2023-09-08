@@ -1,5 +1,9 @@
-# NgrxPokedex  
-# Status: in progress
+# <center>NgrxPokedex</center> 
+## <font color="yellow" style="background: gray; border-radius: 10px">Status: in progress</font>
+### Preview:
+<center>
+<img src="./src/assets/preview.gif" width="700" height="500">
+</center>
 
 ## npm i @ngrx/store @ngrx/store-devtools @ngrx/effects
 
