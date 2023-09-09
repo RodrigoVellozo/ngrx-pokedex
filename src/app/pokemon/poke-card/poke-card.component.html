@@ -1,9 +1,8 @@
-<section class="pokemon-card">
+<section class="pokemon-card" (click)="clique(pokemon.name)">
     <section class="pokemon-card__poke-img">
-      <button>
+      <div>
         <img [src]="getPokemonImageById()" alt="pokemon_image" />
-      </button>
-      
+      </div>
     </section>
   
     <section class="pokemon-card__poke-info">

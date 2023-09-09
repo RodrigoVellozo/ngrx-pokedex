@@ -10,7 +10,7 @@ export class PokeService {
   private readonly POKEMON_SPECIES_URL = 'https://pokeapi.co/api/v2/pokemon-species/';
   private readonly POKEMON_STATS_URL = 'https://pokeapi.co/api/v2/pokemon-species/';
   private readonly POKEMONS_TYPES_URL = 'https://pokeapi.co/api/v2/type/';
-  private readonly pokemonsAmount = 50;
+  private readonly pokemonsAmount = 1000;
 
   
 

@@ -24,6 +24,11 @@ export class PokeCardComponent {
     return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${formattedNumber}.png`;
   }
 
+  // TODO
+  clique(name: string){
+    alert('cliocu: '+name)
+  }
+
   leadingZero(str: String | number, size = 3) {
     let s = String(str);
     while (s.length < (size || 2)) {

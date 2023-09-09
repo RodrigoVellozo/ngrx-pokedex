@@ -1,3 +1,14 @@
 nav{
-    background-color: #ed5564;
+    background-color: #814ca7;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 20px;
 }
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding-top: 10px;
+  }
+  
