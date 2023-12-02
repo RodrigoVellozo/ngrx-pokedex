@@ -1,3 +1,7 @@
+<app-navbar>
+  <app-search (searchEvent)="search($event)"></app-search>
+</app-navbar>
+
 <div class="home">
-  <app-poke-list></app-poke-list>
+  <app-poke-list [pokemons]="(pokemons$|async)!"></app-poke-list>
 </div>

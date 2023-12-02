@@ -5,8 +5,7 @@ import { SearchComponent } from '../search/search.component';
   selector: 'app-navbar',
   standalone: true,
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
-  imports: [SearchComponent]
+  styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
 

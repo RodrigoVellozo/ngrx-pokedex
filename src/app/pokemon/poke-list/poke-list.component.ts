@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { PokemonFacade } from '../state/pokemon.facade';
 import { map, take, tap, of } from 'rxjs';
 
@@ -9,10 +9,10 @@ import { map, take, tap, of } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PokeListComponent {
-  public pokemons$ = this.pokeFacade.pokemons$;
+
+  @Input() pokemons:Array<any> = []
 
   public types: any = [];
-
   public workaround$ = this.pokeFacade.pokemonTypes$.pipe(
     tap((type) => {
       this.types.push(type);
@@ -22,7 +22,7 @@ export class PokeListComponent {
   constructor(private readonly pokeFacade: PokemonFacade) {}
 
   ngOnInit(): void {
-    this.pokeFacade.loadPokemons();
+    // this.pokeFacade.loadPokemons();
     this.pokeFacade.loadPokemonTypes();
   }
 }

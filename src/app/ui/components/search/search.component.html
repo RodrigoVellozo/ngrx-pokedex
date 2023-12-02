@@ -43,7 +43,12 @@
     
     <div class="form-field">
       <mat-form-field>
-        <input matInput type="text" placeholder="Search your pokemon"/>
+        <input 
+          type="text" 
+          placeholder="Search your pokemon"
+          matInput
+          [formControl]="searchForm" 
+          />
       </mat-form-field>
     </div>
   </div>
