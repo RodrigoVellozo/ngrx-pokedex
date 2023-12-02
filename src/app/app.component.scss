@@ -1,8 +1,11 @@
 nav{
     background-color: #c58bef;
     display: flex;
-    justify-content: space-between;
-    padding: 16px 20px;
+    justify-content: space-evenly;
+    padding: 16px 0 16px 0;
+    position: fixed;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .search {
     display: flex;
