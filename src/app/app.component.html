@@ -5,11 +5,11 @@
   />
   
   <div class="search">
-    <div>
+    <div class="pokeball-icon" matTooltip="Enter name or number." >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
-          height="60px"
+          height="60"
           width="60"
           version="1.1"
           id="Layer_1"
@@ -47,9 +47,10 @@
         </svg>
     </div>
     
-    <div>
-      <!-- <label>Find your pokemon</label> -->
-      <input matInput type="text" placeholder="enter name or number " />
+    <div class="form-field">
+      <mat-form-field>
+        <input matInput type="text" placeholder="Search your pokemon"/>
+      </mat-form-field>
     </div>
   </div>
 </nav>
