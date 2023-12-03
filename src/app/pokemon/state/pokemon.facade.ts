@@ -7,6 +7,7 @@ import {
   loadPokemons,
   loadPokemonsTypes,
 } from './pokemon.actions';
+import { GetAllQuery } from 'src/app/core/models/get-all-query';
 
 @Injectable()
 export class PokemonFacade {
@@ -20,10 +21,12 @@ export class PokemonFacade {
 
   public isLoading$ = this._store.select(selector.selectedIsLoading);
 
+  public pokemonQuery$ = this._store.select(selector.pokemonQuery);
+
   constructor(private _store: Store<PokemonState>) {}
 
-  public loadPokemon(pokemonId: number | string) {
-    this._store.dispatch(loadPokemon({ pokemonId }));
+  public loadPokemon(pokemonId: number | string, pokemonQuery: GetAllQuery) {
+    this._store.dispatch(loadPokemon({ pokemonId, pokemonQuery }));
   }
 
   public loadPokemons() {

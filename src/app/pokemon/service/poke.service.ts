@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { from, map, mergeMap } from 'rxjs';
+import { GetAllQuery } from 'src/app/core/models/get-all-query';
 
 @Injectable({
   providedIn: 'root',
@@ -16,9 +17,11 @@ export class PokeService {
 
   constructor(private readonly http: HttpClient) {}
 
-  public getPokemon(pokemonId: string | number) {
-    return this.http.get<any>(`${this.POKEMONS_URL}/${pokemonId}`).pipe(
+  public getPokemon(pokemonId?: string | number, pokemonQuery?: GetAllQuery) {
+    return this.http.get<any>(`${this.POKEMONS_URL}/${pokemonQuery?.query}?limit=${this.pokemonsAmount}`).pipe(
       map((res) => {
+        console.log('service: ', res);
+        if(res.results) return null;
         return res;
       })
     );

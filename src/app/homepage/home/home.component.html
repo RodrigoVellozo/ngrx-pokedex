@@ -2,6 +2,16 @@
   <app-search (searchEvent)="search($event)"></app-search>
 </app-navbar>
 
-<div class="home">
+<div class="home" >
   <app-poke-list [pokemons]="(pokemons$|async)!"></app-poke-list>
+</div>
+
+<div *ngIf="pokemon$ | async as pokemon">
+  <p>id: {{pokemon.id}}</p>
+  <p>base_experience: {{pokemon.base_experience}}</p>
+  <p>height: {{pokemon.height}}</p>
+  <p>name: {{pokemon.name}}</p>
+  <p>order: {{pokemon.order}}</p>
+  <p>weight: {{pokemon.weight}}</p>
+  <p>types: {{pokemon.types | json}}</p>
 </div>

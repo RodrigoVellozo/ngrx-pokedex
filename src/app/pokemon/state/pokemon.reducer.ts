@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Action, createReducer, on } from '@ngrx/store';
 import * as action from './pokemon.actions';
+import { GetAllQuery } from 'src/app/core/models/get-all-query';
 
 export const pokemonFeatureKey = 'pokemonReducer';
 
@@ -13,6 +14,8 @@ export interface PokemonState {
 
   pokemonsTypesResponse?: any[];
 
+  pokemonQuery?: GetAllQuery,
+
   error?: HttpErrorResponse;
 }
 
@@ -22,7 +25,7 @@ export const initialState: PokemonState = {
 
 const _pokemonReducer = createReducer(
   initialState,
-  on(action.loadPokemon, (state) => ({
+  on(action.loadPokemon, ({pokemonQuery, ...state}) => ({
     ...state,
     isLoading: true,
   })),

@@ -27,3 +27,8 @@ export const selectedIsLoading = createSelector(
   selectPokemonState,
   (state) => state.isLoading
 );
+
+export const pokemonQuery = createSelector(
+  selectPokemonState,
+  ({pokemonQuery})=> pokemonQuery
+);

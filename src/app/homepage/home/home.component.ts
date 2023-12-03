@@ -5,20 +5,31 @@ import { PokemonFacade } from 'src/app/pokemon/state/pokemon.facade';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  public pokemons$ = this._pokeFacade.pokemons$;
 
-  public pokemons$ = this.pokeFacade.pokemons$;
+  public pokemon$ = this._pokeFacade.pokemon$.pipe(
+    tap((response) => {
+      console.log('response', response);
 
-  constructor(private readonly pokeFacade: PokemonFacade) {}
+      if(response){
+        console.log('tem results');
+      }else{
+        console.log('nao tem results');
+        
+      }
+    })
+  );
+
+  constructor(private readonly _pokeFacade: PokemonFacade) {}
 
   ngOnInit(): void {
-    this.pokeFacade.loadPokemons();
+    this._pokeFacade.loadPokemons();
   }
 
-  search(search: string){
-    console.log(search);
+  search(query: string) {
+    this._pokeFacade.loadPokemon(1, { query: query });
   }
-
 }
